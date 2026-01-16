@@ -16,7 +16,7 @@ export const projects: Project[] = [
     title: 'Blog App',
     description: 'A full-stack blog platform combining features from Hashnode and Substack, built with modern technologies and designed to scale to 10,000+ readers.',
     period: '2026',
-    technologies: ['TypeScript', 'Java', 'React', 'Spring Boot', 'PostgreSQL'],
+    technologies: ['TypeScript', 'Java', 'React', 'Spring Boot', 'PostgreSQL', 'MVC'],
     category: 'Full Stack',
     githubUrl: 'https://github.com/iabdinur/blog',
     liveUrl: 'https://blog.iabdinur.com',
@@ -26,7 +26,7 @@ export const projects: Project[] = [
     title: 'Hantiile App',
     description: 'A mobile and web application for Hantiile, featuring user management and core business functionality.',
     period: '2026',
-    technologies: ['TypeScript', 'JavaScript', 'React', 'Node.js'],
+    technologies: ['TypeScript', 'Java', 'React', 'Spring Boot', 'PostgreSQL', 'AWS', 'Docker', 'Maven', 'Microservices'],
     category: 'Full Stack',
     githubUrl: 'https://github.com/iabdinur/hantiile',
     liveUrl: 'https://hantiile.com',
@@ -39,6 +39,7 @@ export const projects: Project[] = [
     technologies: ['Java', 'TypeScript', 'React', 'Spring Boot', 'PostgreSQL'],
     category: 'Full Stack',
     githubUrl: 'https://github.com/iabdinur/car-booking-system',
+    liveUrl: 'https://booking.iabdinur.com',
   },
   {
     id: 'littlelemon',
@@ -48,6 +49,7 @@ export const projects: Project[] = [
     technologies: ['TypeScript', 'React', 'CSS'],
     category: 'Frontend',
     githubUrl: 'https://github.com/iabdinur/littlelemon',
+    liveUrl: 'https://littlelemon.iabdinur.com',
   },
   {
     id: 'weather-app',
@@ -57,6 +59,7 @@ export const projects: Project[] = [
     technologies: ['TypeScript', 'JavaScript', 'React'],
     category: 'Frontend',
     githubUrl: 'https://github.com/iabdinur/weather-app',
+    liveUrl: 'https://weather.iabdinur.com',
   },
   {
     id: 'banking-design',
@@ -66,5 +69,6 @@ export const projects: Project[] = [
     technologies: ['Java'],
     category: 'Backend',
     githubUrl: 'https://github.com/iabdinur/bank-design-project',
+    liveUrl: 'https://banking.iabdinur.com',
   },
 ]

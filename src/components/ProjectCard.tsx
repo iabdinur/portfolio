@@ -1,4 +1,5 @@
 import {
+  Box,
   Card,
   CardBody,
   CardHeader,
@@ -22,16 +23,39 @@ interface ProjectCardProps {
 const MotionCard = motion(Card)
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const handleCardClick = () => {
+    const url = project.liveUrl || project.githubUrl
+    if (url) {
+      window.open(url, '_blank', 'noopener,noreferrer')
+    }
+  }
+
+  const handleIconClick = (e: React.MouseEvent, url: string) => {
+    e.stopPropagation()
+    window.open(url, '_blank', 'noopener,noreferrer')
+  }
+
   return (
-    <MotionCard
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.3 }}
-      whileHover={{ y: -4 }}
-      cursor="pointer"
+    <Box
+      as="button"
+      onClick={handleCardClick}
+      w="100%"
       h="100%"
+      textAlign="left"
+      _hover={{ transform: 'translateY(-4px)' }}
+      transition="transform 0.2s"
     >
+      <MotionCard
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3 }}
+        whileHover={{ y: -4 }}
+        cursor="pointer"
+        h="100%"
+        display="flex"
+        flexDirection="column"
+      >
       <CardHeader>
         <Flex justify="space-between" align="start">
           <VStack align="start" spacing={1}>
@@ -43,10 +67,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <HStack spacing={2}>
             {project.githubUrl && (
               <IconButton
-                as="a"
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={(e) => handleIconClick(e, project.githubUrl!)}
                 aria-label={`View ${project.title} on GitHub`}
                 icon={<FaGithub />}
                 variant="ghost"
@@ -55,10 +76,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             )}
             {project.liveUrl && (
               <IconButton
-                as="a"
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={(e) => handleIconClick(e, project.liveUrl!)}
                 aria-label={`Visit ${project.title} live site`}
                 icon={<ExternalLinkIcon />}
                 variant="ghost"
@@ -68,8 +86,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </HStack>
         </Flex>
       </CardHeader>
-      <CardBody pt={0}>
-        <Text mb={4} color="gray.600" _dark={{ color: 'gray.300' }}>
+      <CardBody pt={0} flex="1" display="flex" flexDirection="column">
+        <Text mb={4} color="gray.600" _dark={{ color: 'gray.300' }} flex="1">
           {project.description}
         </Text>
         <HStack flexWrap="wrap" gap={2} mb={3}>
@@ -79,10 +97,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             </Tag>
           ))}
         </HStack>
-        <Text fontSize="xs" color="gray.500" fontWeight="medium">
+        <Text fontSize="xs" color="gray.500" fontWeight="medium" mt="auto">
           {project.category}
         </Text>
       </CardBody>
     </MotionCard>
+    </Box>
   )
 }

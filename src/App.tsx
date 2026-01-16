@@ -42,13 +42,14 @@ function App() {
                 </VStack>
               </motion.div>
 
-              <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6}>
+              <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6} minChildWidth="300px">
                 {projects.map((project, index) => (
                   <motion.div
                     key={project.id}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
+                    style={{ height: '100%' }}
                   >
                     <ProjectCard project={project} />
                   </motion.div>
