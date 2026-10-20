@@ -71,11 +71,12 @@ portfolio/
 ## Projects Showcased
 
 - Blog App
-- Car Booking System
-- Little Lemon
-- Weather App
-- Hantiile App
-- Banking Design Project
+- Booking System
+- Caymis
+- QCLM
+- Cimilada Android App
+- Hantiile.com
+- ATM System
 
 ## Customization
 
