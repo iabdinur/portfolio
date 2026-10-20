@@ -1,4 +1,4 @@
-import { Box, Flex, IconButton, Link, useColorMode, useColorModeValue } from '@chakra-ui/react'
+import { Box, Container, Flex, IconButton, Link, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import { FaMoon, FaSun } from 'react-icons/fa'
 
 export default function Navbar() {
@@ -9,12 +9,14 @@ export default function Navbar() {
 
   return (
     <Box as="nav" bg={bg} borderBottom="1px" borderColor={borderColor} position="sticky" top={0} zIndex={1000}>
-      <Flex h={16} alignItems="center" justifyContent="space-between" px={{ base: 4, md: 8, lg: 16 }} mx="auto">
-        <Link href="/" fontWeight="bold" fontSize="xl">
-          Ibrahim Abdinur's Portfolio
-        </Link>
-        <IconButton aria-label="Toggle theme" icon={<ThemeIcon />} onClick={toggleColorMode} variant="ghost" />
-      </Flex>
+      <Container maxW="7xl">
+        <Flex h={16} alignItems="center" justifyContent="space-between">
+          <Link href="/" fontWeight="bold" fontSize="xl" _hover={{ textDecoration: 'none' }}>
+            My Portfolio
+          </Link>
+          <IconButton aria-label="Toggle theme" icon={<ThemeIcon />} onClick={toggleColorMode} variant="ghost" />
+        </Flex>
+      </Container>
     </Box>
   )
 }

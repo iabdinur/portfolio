@@ -12,16 +12,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'blog-app',
-    title: 'Blog App',
-    description: 'A full-stack blog platform combining features from Hashnode and Substack, built with modern technologies and designed to scale to 10,000+ readers.',
-    period: '2026',
-    technologies: ['TypeScript', 'Java', 'React', 'Spring Boot', 'PostgreSQL', 'MVC', 'AWS ECS', 'AWS SES', 'AWS S3', 'Maven', 'Docker', 'GitHub'],
-    category: 'Full Stack',
-    githubUrl: 'https://github.com/iabdinur/blog',
-    liveUrl: 'https://blog.iabdinur.dev',
-  },
-  {
     id: 'hantiile-app',
     title: 'Hantiile App',
     description: 'A mobile and web application for Hantiile, featuring user management and core business functionality.',
@@ -30,6 +20,16 @@ export const projects: Project[] = [
     category: 'Full Stack',
     githubUrl: 'https://github.com/iabdinur/hantiile',
     liveUrl: 'https://hantiile.com',
+  },
+  {
+    id: 'blog-app',
+    title: 'Blog App',
+    description: 'A full-stack blog platform combining features from Hashnode and Substack, built with modern technologies and designed to scale to 10,000+ readers.',
+    period: '2026',
+    technologies: ['TypeScript', 'Java', 'React', 'Spring Boot', 'PostgreSQL', 'MVC', 'AWS ECS', 'AWS SES', 'AWS S3', 'Maven', 'Docker', 'GitHub'],
+    category: 'Full Stack',
+    githubUrl: 'https://github.com/iabdinur/blog',
+    liveUrl: 'https://blog.iabdinur.dev',
   },
   {
     id: 'car-booking-system',

@@ -1,4 +1,4 @@
-import { Box, ChakraProvider, ColorModeScript, Container, Heading, SimpleGrid, Text, VStack } from '@chakra-ui/react'
+import { Box, ChakraProvider, ColorModeScript, Container, SimpleGrid, Text, VStack } from '@chakra-ui/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { motion } from 'framer-motion'
 import ProjectCard from '@/components/ProjectCard'
@@ -32,13 +32,6 @@ function App() {
                   transition={{ duration: 0.5 }}
                 >
                   <VStack spacing={4} textAlign="center" mb={8}>
-                    <Heading
-                      as="h1"
-                      size={{ base: 'xl', md: '2xl', lg: '3xl' }}
-                      fontWeight="bold"
-                    >
-                      My Portfolio
-                    </Heading>
                     <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.600" _dark={{ color: 'gray.400' }}>
                       Software engineer building cloud based applications, microservices, and data pipelines
                     </Text>

@@ -29,8 +29,7 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      # The blog's theme is the source of truth; fail if this copy has drifted.
-      # There is no ../blog checkout here, so this compares against the blog repo's main branch.
+      # No ../blog checkout in CI, so this compares against the blog repo's main branch.
       - name: Check theme matches the blog
         run: npm run theme:check
 
