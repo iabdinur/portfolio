@@ -10,6 +10,7 @@ import {
   Tag,
   Text,
   VStack,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
@@ -23,6 +24,8 @@ interface ProjectCardProps {
 const MotionCard = motion(Card)
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const cardBg = useColorModeValue('white', 'gray.800')
+
   const handleCardClick = () => {
     const url = project.liveUrl || project.githubUrl
     if (url) {
@@ -51,6 +54,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         viewport={{ once: true }}
         transition={{ duration: 0.3 }}
         whileHover={{ y: -4 }}
+        bg={cardBg}
+        borderRadius="lg"
+        boxShadow="md"
+        _hover={{ boxShadow: 'lg' }}
         cursor="pointer"
         h="100%"
         display="flex"
@@ -60,7 +67,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <Flex justify="space-between" align="start">
           <VStack align="start" spacing={1}>
             <Heading size="md">{project.title}</Heading>
-            <Text fontSize="sm" color="gray.500">
+            <Text fontSize="sm" color="gray.500" _dark={{ color: 'gray.400' }}>
               {project.period}
             </Text>
           </VStack>
@@ -87,17 +94,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </Flex>
       </CardHeader>
       <CardBody pt={0} flex="1" display="flex" flexDirection="column">
-        <Text mb={4} color="gray.600" _dark={{ color: 'gray.300' }} flex="1">
+        <Text mb={4} color="gray.600" _dark={{ color: 'gray.400' }} flex="1">
           {project.description}
         </Text>
         <HStack flexWrap="wrap" gap={2} mb={3}>
           {project.technologies.map((tech) => (
-            <Tag key={tech} size="sm" colorScheme="blue">
+            <Tag key={tech} size="sm" colorScheme="brand" variant="subtle" borderRadius="md">
               {tech}
             </Tag>
           ))}
         </HStack>
-        <Text fontSize="xs" color="gray.500" fontWeight="medium" mt="auto">
+        <Text fontSize="xs" color="gray.500" _dark={{ color: 'gray.400' }} fontWeight="medium" mt="auto">
           {project.category}
         </Text>
       </CardBody>

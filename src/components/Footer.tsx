@@ -1,55 +1,40 @@
-import { Box, Container, Flex, HStack, IconButton, Text } from '@chakra-ui/react'
+import { Box, Container, HStack, Icon, Link, Text, VStack, useColorModeValue } from '@chakra-ui/react'
 import { FaGithub, FaLinkedin, FaEnvelope, FaExternalLinkAlt } from 'react-icons/fa'
 
+const mutedLink = {
+  color: 'gray.600',
+  _dark: { color: 'gray.400' },
+  _hover: { color: 'gray.900', _dark: { color: 'gray.200' } },
+}
+
 export default function Footer() {
+  const bg = useColorModeValue('white', 'gray.900')
+  const color = useColorModeValue('gray.900', 'gray.200')
+
   return (
-    <Box as="footer" borderTop="1px" borderColor="gray.200" _dark={{ borderColor: 'gray.700' }} py={8} mt={16}>
-      <Container maxW="7xl">
-        <Flex direction={{ base: 'column', sm: 'row' }} justify="space-between" align="center" gap={4}>
-          <Text fontSize="sm" color="gray.600" _dark={{ color: 'gray.400' }}>
-            Ibrahim Abdinur © {new Date().getFullYear()}
-          </Text>
-          <HStack spacing={4}>
-            <IconButton
-              as="a"
-              href="https://github.com/iabdinur"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              icon={<FaGithub />}
-              variant="ghost"
-              size="sm"
-            />
-            <IconButton
-              as="a"
-              href="https://www.linkedin.com/in/ibrahim-abdinur/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              icon={<FaLinkedin />}
-              variant="ghost"
-              size="sm"
-            />
-            <IconButton
-              as="a"
-              href="mailto:iabdinur@icloud.com"
-              aria-label="Email"
-              icon={<FaEnvelope />}
-              variant="ghost"
-              size="sm"
-            />
-            <IconButton
-              as="a"
-              href="https://iabdinur.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Website"
-              icon={<FaExternalLinkAlt />}
-              variant="ghost"
-              size="sm"
-            />
-          </HStack>
-        </Flex>
+    <Box as="footer" bg={bg} color={color} mt="auto" py={8}>
+      <Container maxW="7xl" px={{ base: 4, md: 8 }}>
+        <Box borderTop="1px" borderColor="gray.200" _dark={{ borderColor: 'gray.700' }} pt={4}>
+          <VStack spacing={3}>
+            <Text textAlign="center" fontSize="sm" color="gray.600" _dark={{ color: 'gray.400' }}>
+              © {new Date().getFullYear()} Ibrahim Abdinur
+            </Text>
+            <HStack spacing={4} justify="center">
+              <Link href="https://github.com/iabdinur" isExternal aria-label="GitHub" {...mutedLink}>
+                <Icon as={FaGithub} boxSize={5} />
+              </Link>
+              <Link href="https://www.linkedin.com/in/ibrahim-abdinur/" isExternal aria-label="LinkedIn" {...mutedLink}>
+                <Icon as={FaLinkedin} boxSize={5} />
+              </Link>
+              <Link href="mailto:iabdinur@icloud.com" aria-label="Email" {...mutedLink}>
+                <Icon as={FaEnvelope} boxSize={5} />
+              </Link>
+              <Link href="https://iabdinur.com" isExternal aria-label="Website" {...mutedLink}>
+                <Icon as={FaExternalLinkAlt} boxSize={5} />
+              </Link>
+            </HStack>
+          </VStack>
+        </Box>
       </Container>
     </Box>
   )
