@@ -19,7 +19,7 @@ export const projects: Project[] = [
     technologies: ['TypeScript', 'Java', 'React', 'Spring Boot', 'PostgreSQL', 'MVC', 'AWS ECS', 'AWS SES', 'AWS S3', 'Maven', 'Docker', 'GitHub'],
     category: 'Full Stack',
     githubUrl: 'https://github.com/iabdinur/blog',
-    liveUrl: 'https://blog.iabdinur.com',
+    liveUrl: 'https://blog.iabdinur.dev',
   },
   {
     id: 'hantiile-app',
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     technologies: ['Java', 'TypeScript', 'React', 'Spring Boot', 'PostgreSQL'],
     category: 'Full Stack',
     githubUrl: 'https://github.com/iabdinur/car-booking-system',
-    liveUrl: 'https://booking.iabdinur.com',
+    liveUrl: 'https://booking.iabdinur.dev',
   },
   {
     id: 'littlelemon',
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     technologies: ['TypeScript', 'React', 'CSS'],
     category: 'Frontend',
     githubUrl: 'https://github.com/iabdinur/littlelemon',
-    liveUrl: 'https://littlelemon.iabdinur.com',
+    liveUrl: 'https://littlelemon.iabdinur.dev',
   },
   {
     id: 'weather-app',
@@ -59,7 +59,7 @@ export const projects: Project[] = [
     technologies: ['TypeScript', 'JavaScript', 'React'],
     category: 'Frontend',
     githubUrl: 'https://github.com/iabdinur/weather-app',
-    liveUrl: 'https://weather.iabdinur.com',
+    liveUrl: 'https://weather.iabdinur.dev',
   },
   {
     id: 'banking-design',
@@ -69,6 +69,6 @@ export const projects: Project[] = [
     technologies: ['Java'],
     category: 'Backend',
     githubUrl: 'https://github.com/iabdinur/bank-design-project',
-    liveUrl: 'https://banking.iabdinur.com',
+    liveUrl: 'https://banking.iabdinur.dev',
   },
 ]

@@ -29,7 +29,7 @@ export default function Footer() {
               <Link href="mailto:iabdinur@icloud.com" aria-label="Email" {...mutedLink}>
                 <Icon as={FaEnvelope} boxSize={5} />
               </Link>
-              <Link href="https://iabdinur.com" isExternal aria-label="Website" {...mutedLink}>
+              <Link href="https://iabdinur.dev" isExternal aria-label="Website" {...mutedLink}>
                 <Icon as={FaExternalLinkAlt} boxSize={5} />
               </Link>
             </HStack>
