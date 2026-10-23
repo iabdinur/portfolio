@@ -71,12 +71,12 @@ portfolio/
 ## Projects Showcased
 
 - Blog App
-- Booking System
+- Autohive
 - Caymis
 - QCLM
-- Cimilada Android App
+- Cimilada App
 - Hantiile.com
-- ATM System
+- Central Ledger and Remittance
 
 ## Customization
 
